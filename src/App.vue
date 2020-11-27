@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <b-button @click="openModal">Open Modal</b-button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from './components/HelloWorld.vue'
+import DemoModal from '@/DemoModal.vue'
 
 @Component({
-  components: {
-    HelloWorld
-  }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  async openModal () {
+    const result = await this.$asyncModal.show<number, DemoModal>(DemoModal, {
+      value: 3
+    })
+    console.log(result)
+  }
+}
 </script>
 
 <style lang="scss">

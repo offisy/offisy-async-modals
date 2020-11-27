@@ -1,19 +1,39 @@
 {
-  "name": "offisy-modal-plugin",
+  "name": "@offisy/vue-async-modal",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "main": "dist/vue-async-modal.umd.min.js",
+  "unpkg": "dist/vue-async-modal.umd.min.js",
+  "jsdelivr": "dist/vue-async-modal.umd.min.js",
+  "author": {
+    "name": "Marvin Schürz",
+    "email": "marvin.schuerz@offisy.at"
+  },
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/offisy/offisy-date-picker.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-async-modal src/lib.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.19.0",
     "core-js": "^3.6.5",
+    "uuid": "^8.3.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
